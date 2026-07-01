@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PANEL LAYOUT -->
+    <div id="pantallaPanel" class="screen active panel-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="ti ti-planet"></i>
+                <span class="sidebar-titulo">Orbit Panel</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-seccion="usuarios">
+                    <i class="ti ti-users"></i>
+                    <span>Usuarios</span>
+                </a>
+                <a href="#" class="nav-item" data-seccion="productos">
+                    <i class="ti ti-package"></i>
+                    <span>Productos</span>
+                </a>
+                <a href="#" class="nav-item" data-seccion="reportes">
+                    <i class="ti ti-chart-bar"></i>
+                    <span>Reportes</span>
+                </a>
+                <a href="#" class="nav-item" data-seccion="configuracion">
+                    <i class="ti ti-settings"></i>
+                    <span>Configuración</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item">
+                    <i class="ti ti-logout"></i>
+                    <span>Salir</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="panel-main">
+
+            <!-- HEADER -->
+            <header class="panel-header">
+                <div>
+                    <p class="header-breadcrumb">Panel / Usuarios</p>
+                    <h1 class="header-titulo">Usuarios</h1>
+                </div>
+            </header>
+
+            <!-- FORMULARIO AGREGAR USUARIO -->
+            <section class="panel-seccion">
+                <div class="form-card">
+                    <div class="form-card-header">
+                        <i class="ti ti-user-plus"></i>
+                        <h2 class="form-card-titulo">Agregar usuario</h2>
+                    </div>
+
+                    <form id="formulario">
+
+                        <div class="campo-grupo">
+                            <label>Username</label>
+                            <input type="text" name="username" placeholder="usuario" required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label>Nombre</label>
+                            <input type="text" name="nombre" placeholder="nombre completo" required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label>Contraseña</label>
+                            <input type="password" name="contrasena" placeholder="••••••••" required>
+                        </div>
+
+
+                        <p class="mensaje-error" id="mensajeError"></p>
+
+                    </form>
+                </div>
+            </section>
+
+
+            <section class="panel-usuario" id="seccionUsuarios">
+                <div class="tabla-card">
+ 
+                    <div class="tabla-header">
+                        <div class="tabla-header-info">
+                            <i class="ti ti-users"></i>
+                            <h2 class="tabla-titulo">Control de usuarios</h2>
+                        </div>
+                        <div class="tabla-header-acciones">
+                            <input type="text" class="tabla-buscador" placeholder="Buscar usuario..." id="buscadorUsuarios">
+                        </div>
+                    </div>
+ 
+                    <table class="tabla" id="tablaUsuarios">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Nombre</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTablaUsuarios">
+                            <!-- filas generadas dinámicamente -->
+                        </tbody>
+                    </table>
+ 
+                    <div class="tabla-vacia" id="tablaVacia">
+                        <i class="ti ti-users-off"></i>
+                        <p>No hay usuarios registrados</p>
+                    </div>
+ 
+                </div>
+            </section>
+
+            
+            <!-- Contenido de la ventana flotante -->
+            <div id="miModal" class="modal">
+                <div class="container-modal">
+                    <span id="cerrarVentana" class="cerrar">&times;</span>
+                    <h2>Editar Usuario</h2>
+                    
+                    <form id="formEditarUsuario">
+
+                        
+                        <label for="editUsername">Username:</label>
+                        <input type="text" id="editUsername" required>
+
+                        <label for="editNombre">Nombre:</label>
+                        <input type="text" id="editNombre" required>
+
+                        <label for="editPassword">password:</label>
+                        <input type="text" id="editPassword" required>
+
+                        
+                        <button type="submit">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

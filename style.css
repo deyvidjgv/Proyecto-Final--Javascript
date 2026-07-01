@@ -1,0 +1,475 @@
+/* BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+}
+
+/* PANTALLA */
+.screen        { display: none; }
+.screen.active { display: flex; }
+
+/* ─── PANEL LAYOUT ─── */
+.panel-layout {
+  min-height: 100vh;
+  background: #f5f5f3;
+}
+
+/* ─── SIDEBAR ─── */
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: #ffffff;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  gap: 2rem;
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 0.5rem;
+}
+
+.sidebar-logo i {
+  font-size: 26px;
+  color: #1a1a1a;
+}
+
+.sidebar-titulo {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #6b6b6b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-item i {
+  font-size: 17px;
+}
+
+.nav-item:hover {
+  background: #f5f5f3;
+  color: #1a1a1a;
+}
+
+.nav-item.active {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.sidebar-footer {
+  border-top: 0.5px solid rgba(0, 0, 0, 0.10);
+  padding-top: 1rem;
+}
+
+/* ─── MAIN ─── */
+.panel-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+
+/* ─── HEADER ─── */
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.header-breadcrumb {
+  font-size: 11px;
+  color: #9b9b9b;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.header-titulo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* ─── FORM CARD ─── */
+.panel-seccion {
+  display: flex;
+}
+
+.form-card {
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 2rem;
+  width: 360px;
+}
+
+.form-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.form-card-header i {
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+.form-card-titulo {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* ─── CAMPOS (igual que antes) ─── */
+.campo-grupo {
+  margin-bottom: 1rem;
+}
+
+.campo-grupo label {
+  display: block;
+  font-size: 12px;
+  color: #6b6b6b;
+  margin-bottom: 5px;
+}
+
+.campo-grupo input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  background: #f5f5f3;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+}
+
+.campo-grupo input:focus {
+  border-color: #1a1a1a;
+}
+
+/* ─── BOTONES ─── */
+.form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn-primario {
+  flex: 1;
+  padding: 9px;
+  background: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-primario:hover { opacity: 0.8; }
+
+.btn-secundario {
+  padding: 9px 16px;
+  background: transparent;
+  color: #6b6b6b;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-secundario:hover {
+  background: #f5f5f3;
+  color: #1a1a1a;
+}
+
+/* ─── MENSAJES ─── */
+.mensaje-error {
+  font-size: 12px;
+  color: #c0392b;
+  margin-top: 8px;
+  min-height: 16px;
+  text-align: center;
+}
+
+/* control usuarios */
+.tabla-card {
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.tabla-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+
+.tabla-header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tabla-header-info i {
+  font-size: 18px;
+  color: #1a1a1a;
+}
+
+.tabla-titulo {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.tabla-buscador {
+  padding: 7px 12px;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  background: #f5f5f3;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  width: 200px;
+}
+
+.tabla-buscador:focus {
+  border-color: #1a1a1a;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla thead tr {
+  background: #f5f5f3;
+}
+
+.tabla th {
+  padding: 10px 1.5rem;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b6b6b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+
+.tabla td {
+  padding: 12px 1.5rem;
+  font-size: 13px;
+  color: #1a1a1a;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+}
+
+.tabla tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla tbody tr:hover {
+  background: #f5f5f3;
+}
+
+.btn-accion {
+  background: transparent;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  padding: 5px 8px;
+  cursor: pointer;
+  color: #6b6b6b;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  margin-right: 4px;
+}
+
+.btn-accion:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+  border-color: #1a1a1a;
+}
+
+.btn-editar:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.tabla-vacia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 3rem;
+  color: #9b9b9b;
+}
+
+.tabla-vacia i {
+  font-size: 32px;
+}
+
+.tabla-vacia p {
+  font-size: 13px;
+}
+
+/* ═══════════════════ MODAL EDITAR USUARIO ═══════════════════ */
+
+/* Contenedor principal que cubre toda la pantalla */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 26, 26, 0.45);
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.container-modal {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 380px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  animation: slideUp 0.2s ease-out;
+}
+
+.container-modal h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.cerrar {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  color: #9b9b9b;
+  transition: color 0.15s;
+}
+
+.cerrar:hover {
+  color: #1a1a1a;
+}
+
+/* Formulario dentro del modal: mismo look que campo-grupo */
+#formEditarUsuario label {
+  display: block;
+  font-size: 12px;
+  color: #6b6b6b;
+  margin-bottom: 5px;
+  margin-top: 1rem;
+}
+
+#formEditarUsuario label:first-of-type {
+  margin-top: 0;
+}
+
+#formEditarUsuario input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  background: #f5f5f3;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+#formEditarUsuario input:focus {
+  border-color: #1a1a1a;
+}
+
+#formEditarUsuario button[type="submit"] {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 9px;
+  background: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+#formEditarUsuario button[type="submit"]:hover {
+  opacity: 0.8;
+}
