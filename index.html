@@ -84,6 +84,25 @@
                             <input type="password" name="contrasena" placeholder="••••••••" required>
                         </div>
 
+                        <div class="campo-grupo">
+                            <label>Validar contraseña</label>
+                            <input type="password" name="validarContrasena" placeholder="••••••••" required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label>Rol</label>
+                            <select name="rol">
+                                <option value="">Seleccionar rol</option>
+                                <option value="admin">Administrador</option>
+                                <option value="usuario">Usuario</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primario">
+                                <i class="ti ti-user-plus"></i> Registrar
+                            </button>
+                        </div>
 
                         <p class="mensaje-error" id="mensajeError"></p>
 
@@ -110,6 +129,7 @@
                             <tr>
                                 <th>Username</th>
                                 <th>Nombre</th>
+                                <th>Rol</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -137,13 +157,20 @@
 
                         
                         <label for="editUsername">Username:</label>
-                        <input type="text" id="editUsername" required>
+                        <input type="text" id="editUsername" required readonly>
 
                         <label for="editNombre">Nombre:</label>
                         <input type="text" id="editNombre" required>
 
                         <label for="editPassword">password:</label>
                         <input type="text" id="editPassword" required>
+
+                        <label for="editRol">Rol:</label>
+                        <select name="editRol" id="editRol" required>
+                            <option value="">Seleccionar rol</option>
+                            <option value="admin">Administrador</option>
+                            <option value="usuario">Usuario</option>
+                        </select>
 
                         
                         <button type="submit">Guardar Cambios</button>

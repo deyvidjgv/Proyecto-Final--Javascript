@@ -17,7 +17,7 @@ body {
 /* ─── PANEL LAYOUT ─── */
 .panel-layout {
   min-height: 100vh;
-  background: #f5f5f3;
+  background: url('space.png') center center / cover no-repeat fixed;
 }
 
 /* ─── SIDEBAR ─── */
@@ -165,7 +165,8 @@ body {
   margin-bottom: 5px;
 }
 
-.campo-grupo input {
+.campo-grupo input,
+.campo-grupo select {
   width: 100%;
   padding: 8px 12px;
   border: 0.5px solid rgba(0, 0, 0, 0.12);
@@ -177,7 +178,8 @@ body {
   outline: none;
 }
 
-.campo-grupo input:focus {
+.campo-grupo input:focus,
+.campo-grupo select:focus {
   border-color: #1a1a1a;
 }
 
@@ -226,9 +228,9 @@ body {
 
 /* ─── MENSAJES ─── */
 .mensaje-error {
-  font-size: 12px;
+  font-size: 15px;
   color: #c0392b;
-  margin-top: 8px;
+  margin-top: 10px;
   min-height: 16px;
   text-align: center;
 }
@@ -346,6 +348,12 @@ body {
   border-color: #2563eb;
 }
 
+.btn-eliminar:hover {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+
 .tabla-vacia {
   display: flex;
   flex-direction: column;
@@ -439,7 +447,8 @@ body {
   margin-top: 0;
 }
 
-#formEditarUsuario input {
+#formEditarUsuario input,
+#formEditarUsuario select {
   width: 100%;
   padding: 8px 12px;
   border: 0.5px solid rgba(0, 0, 0, 0.12);
@@ -452,7 +461,8 @@ body {
   transition: border-color 0.15s;
 }
 
-#formEditarUsuario input:focus {
+#formEditarUsuario input:focus,
+#formEditarUsuario select:focus {
   border-color: #1a1a1a;
 }
 
