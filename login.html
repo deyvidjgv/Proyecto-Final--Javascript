@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Orbit Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <div class="login-card">
+        <div class="login-header">
+            <i class="ti ti-login"></i>
+            <h1 class="login-titulo">Iniciar sesión</h1>
+        </div>
+
+        <form id="formularioLogin">
+            <div class="campo-grupo">
+                <label for="username">Username / Identificación</label>
+                <input type="text" id="username" name="username" placeholder="usuario" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="••••••••" required>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primario" id="btnIngresar">
+                    <i class="ti ti-login"></i> Ingresar
+                </button>
+            </div>
+
+            <p class="mensaje-error" id="mensajeError"></p>
+        </form>
+
+        <div class="login-footer">
+            ¿No tienes una cuenta? <a href="index.html">Registrarse aquí</a>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>
