@@ -140,9 +140,7 @@ const renderUsers = async () => {
   renderTabla(lista);
 };
 
-document
-  .getElementById("buscadorUsuarios")
-  .addEventListener("input", async (e) => {
+document.getElementById("buscadorUsuarios").addEventListener("input", async (e) => {
     const termino = e.target.value.toLowerCase();
     const lista = await listUsers();
 
