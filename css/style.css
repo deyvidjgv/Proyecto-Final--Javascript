@@ -17,7 +17,7 @@ body {
 /* ─── PANEL LAYOUT ─── */
 .panel-layout {
   min-height: 100vh;
-  background: url('../galaxia.png') center center / cover no-repeat fixed;
+  background: url('../img/galaxia.png') center center / cover no-repeat fixed;
 }
 
 /* ─── SIDEBAR ─── */

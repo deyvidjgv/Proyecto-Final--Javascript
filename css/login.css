@@ -8,7 +8,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 14px;
-  background: url('../space.png') center center / cover no-repeat fixed;
+  background: url('../img/space.png') center center / cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
