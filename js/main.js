@@ -1,3 +1,7 @@
+import {verificar} from "./auth.js";
+import {cerrarSesion} from "./auth.js";
+
+verificar();
 let users = [];
 let items = [];
 
@@ -239,6 +243,12 @@ window.addEventListener("click", (event) => {
   if (event.target === modal) {
     modal.style.display = "none";
   }
+});
+
+const salir = document.getElementById("salir");
+
+salir.addEventListener("click", () => {
+  cerrarSesion();
 });
 
 showUsers();

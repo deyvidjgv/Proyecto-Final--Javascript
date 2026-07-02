@@ -15,11 +15,11 @@
 - [x] Listar, editar y eliminar usuarios
 - [x] Sincronización con Firebase
 
-### ⚠️ Login — Parcial
+### ✅ Login — Completo
 
 - [x] Formulario de autenticación por identificación + contraseña
-- [ ] Protección de rutas (evitar entrar a `index.html` sin sesión activa)
-- [ ] Botón "Salir" funcional (cerrar sesión)
+- [x] Protección de rutas (evitar entrar a `index.html` sin sesión activa)
+- [x] Botón "Salir" funcional (cerrar sesión)
 
 ### ❌ Módulo de Inventario — Sin iniciar
 

@@ -21,6 +21,12 @@ formulario.addEventListener("submit",async (event) => {
         }
     }
 
+    if(contrasena === ""){
+        document.getElementById("mensajeError").textContent = "Ingrese una contraseña";
+    } else if (user == null){
+        document.getElementById("mensajeError").textContent = "Usuario no encontrado";
+    }
+
     
 });
 
