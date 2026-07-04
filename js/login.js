@@ -1,7 +1,9 @@
+import {regresar} from "./auth.js";
 const URL = "https://stock-slow-5f434-default-rtdb.firebaseio.com";
 
 const formulario = document.getElementById("formularioLogin");
 
+regresar();
 
 formulario.addEventListener("submit",async (event) => {
     event.preventDefault();

@@ -18,8 +18,9 @@
 ### ✅ Login — Completo
 
 - [x] Formulario de autenticación por identificación + contraseña
-- [x] Protección de rutas (evitar entrar a `index.html` sin sesión activa)
+- [x] Protección de rutas (evitar entrar a index.html sin sesión activa)
 - [x] Botón "Salir" funcional (cerrar sesión)
+- [x] Redirección automática si ya hay sesión activa al entrar a login.html
 
 ### ❌ Módulo de Inventario — Sin iniciar
 

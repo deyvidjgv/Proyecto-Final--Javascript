@@ -193,9 +193,7 @@ tbody.addEventListener("click", async (event) => {
 
 /* editar usuario */
 
-document
-  .getElementById("formEditarUsuario")
-  .addEventListener("submit", async (event) => {
+document.getElementById("formEditarUsuario").addEventListener("submit", async (event) => {
     event.preventDefault();
     const nuevoNombre = document.getElementById("editNombre").value;
     const nuevaContrasena = document.getElementById("editPassword").value;
