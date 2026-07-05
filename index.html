@@ -11,44 +11,13 @@
 
 <body>
 
-    <!-- PANEL LAYOUT -->
+    <!-- layout del panel -->
     <div id="pantallaPanel" class="screen active panel-layout">
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                <i class="ti ti-planet"></i>
-                <span class="sidebar-titulo">Orbit Panel</span>
-            </div>
+        <!-- barra lateral -->
+            <menu-lateral activo="usuarios"></menu-lateral>
 
-            <nav class="sidebar-nav">
-                <a href="#" class="nav-item active" data-seccion="usuarios">
-                    <i class="ti ti-users"></i>
-                    <span>Usuarios</span>
-                </a>
-                <a href="productos.html" class="nav-item" data-seccion="productos">
-                    <i class="ti ti-package"></i>
-                    <span>Productos</span>
-                </a>
-                <a href="#" class="nav-item" data-seccion="reportes">
-                    <i class="ti ti-chart-bar"></i>
-                    <span>Reportes</span>
-                </a>
-                <a href="#" class="nav-item" data-seccion="configuracion">
-                    <i class="ti ti-settings"></i>
-                    <span>Configuración</span>
-                </a>
-            </nav>
-
-            <div class="sidebar-footer">
-                <a href="#" class="nav-item" id="salir">
-                    <i class="ti ti-logout"></i>
-                    <span>Salir</span>
-                </a>
-            </div>
-        </aside>
-
-        <!-- CONTENIDO PRINCIPAL -->
+        <!--CONTENIDO PRINCIPAL -->
         <main class="panel-main">
 
             <!-- HEADER -->
@@ -123,20 +92,7 @@
                             <input type="text" class="tabla-buscador" placeholder="Buscar usuario..." id="buscadorUsuarios">
                         </div>
                     </div>
- 
-                    <table class="tabla" id="tablaUsuarios">
-                        <thead>
-                            <tr>
-                                <th>Username</th>
-                                <th>Nombre</th>
-                                <th>Rol</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cuerpoTablaUsuarios">
-                            <!-- filas generadas dinámicamente -->
-                        </tbody>
-                    </table>
+                    <app-tabla id="tablaUsuarios"></app-tabla>
  
                     <div class="tabla-vacia" id="tablaVacia">
                         <i class="ti ti-users-off"></i>
@@ -182,6 +138,8 @@
     </div>
 
     <script src="js/main.js" type="module"></script>
+    <script src="js/components/app-tabla.js" type="module"></script>
+    <script src="js/components/menu-lateral.js" type="module"></script>
 </body>
 
 </html>

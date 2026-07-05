@@ -1,5 +1,4 @@
-import {verificar} from "./auth.js";
-import {cerrarSesion} from "./auth.js";
+import { verificar } from "./auth.js";
 
 verificar();
 let users = [];
@@ -110,33 +109,7 @@ document.addEventListener("product-submit", (event) => {
 });
 
 const renderTabla = (lista) => {
-  const tbody = document.getElementById("cuerpoTablaUsuarios");
-  const tablaVacia = document.getElementById("tablaVacia");
-
-  tbody.innerHTML = "";
-  if (lista.length === 0) {
-    tablaVacia.style.display = "flex";
-    return;
-  }
-  tablaVacia.style.display = "none";
-
-  lista.forEach((user) => {
-    const fila = document.createElement("tr");
-    fila.innerHTML = `
-            <td>${user.username}</td>
-            <td>${user.nombre}</td>
-            <td>${user.rol}</td>
-            <td>
-                <button class="btn-accion btn-eliminar" data-username="${user.username}">
-                    <i class="ti ti-trash" title="Eliminar"></i>
-                </button>
-                <button class="btn-accion btn-editar" data-edit="${user.username}">
-                    <i class="ti ti-edit" title="Editar"></i>
-                </button>
-            </td>
-        `;
-    tbody.appendChild(fila);
-  });
+  document.querySelector("#tablaUsuarios").datos = lista;
 };
 
 const renderUsers = async () => {
@@ -144,7 +117,9 @@ const renderUsers = async () => {
   renderTabla(lista);
 };
 
-document.getElementById("buscadorUsuarios").addEventListener("input", async (e) => {
+document
+  .getElementById("buscadorUsuarios")
+  .addEventListener("input", async (e) => {
     const termino = e.target.value.toLowerCase();
     const lista = await listUsers();
 
@@ -193,7 +168,9 @@ tbody.addEventListener("click", async (event) => {
 
 /* editar usuario */
 
-document.getElementById("formEditarUsuario").addEventListener("submit", async (event) => {
+document
+  .getElementById("formEditarUsuario")
+  .addEventListener("submit", async (event) => {
     event.preventDefault();
     const nuevoNombre = document.getElementById("editNombre").value;
     const nuevaContrasena = document.getElementById("editPassword").value;
@@ -243,11 +220,11 @@ window.addEventListener("click", (event) => {
   }
 });
 
-const salir = document.getElementById("salir");
-
-salir.addEventListener("click", () => {
-  cerrarSesion();
-});
+document.querySelector("#tablaUsuarios").columnas = [
+  { campo: "username", titulo: "Username" },
+  { campo: "nombre", titulo: "Nombre" },
+  { campo: "rol", titulo: "Rol" },
+];
 
 showUsers();
 renderUsers();

@@ -21,8 +21,14 @@ body {
 }
 
 /* ─── SIDEBAR ─── */
-.sidebar {
+menu-lateral {
   width: 220px;
+  min-height: 100vh;
+  flex-shrink: 0;
+}
+
+
+.sidebar {
   min-height: 100vh;
   background: #ffffff;
   border-right: 0.5px solid rgba(0, 0, 0, 0.10);
@@ -89,6 +95,7 @@ body {
   border-top: 0.5px solid rgba(0, 0, 0, 0.10);
   padding-top: 1rem;
 }
+
 
 /* ─── MAIN ─── */
 .panel-main {

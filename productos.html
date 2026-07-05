@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <title>Orbit Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+
+    <!-- PANEL LAYOUT -->
+    <div id="pantallaPanel" class="screen active panel-layout">
+
+        <!-- barra lateral -->
+        <menu-lateral activo="productos"></menu-lateral>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="panel-main">
+            <app-tabla></app-tabla>
+
+        </main>
+    </div>
+
     <script src="js/main.js" type="module"></script>
+    <script src="js/components/menu-lateral.js" type="module"></script>
 </body>
+
 </html>
