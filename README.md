@@ -22,13 +22,13 @@
 - [x] Botón "Salir" funcional (cerrar sesión)
 - [x] Redirección automática si ya hay sesión activa al entrar a login.html
 
-### ❌ Módulo de Inventario — Sin iniciar
+### ✅ Módulo de Inventario — Completo
 
-- [ ] Registrar producto: código, nombre, proveedor
-- [ ] Definir fórmula/receta cuando el producto es fabricado (materia prima + cantidades)
-- [ ] Aumentar stock por código de producto + cantidad
-- [ ] Listado de productos con datos completos y saldo actual
-- [ ] Buscador/filtro de productos
+- [x] Registrar producto: código, nombre, proveedor
+- [x] Definir fórmula/receta cuando el producto es fabricado (materia prima + cantidades)
+- [x] Aumentar stock por código de producto + cantidad
+- [x] Listado de productos con datos completos y saldo actual
+- [x] Buscador/filtro de productos
 
 ### ❌ Módulo de Producción — Sin iniciar
 
@@ -38,9 +38,9 @@
 - [ ] Código consecutivo autoincremental por proceso de producción
 - [ ] Resumen de producción (cantidad fabricada + materia prima consumida)
 
-### ❌ Transversales — Sin iniciar
+### ⚠️ Transversales — En Progreso
 
-- [ ] Web Components para reutilización de UI (tabla, formulario, modal, buscador)
+- [x] Web Components para reutilización de UI (tabla, formulario, modal, buscador)
 - [ ] Diseño responsive validado en móvil
 - [ ] Wireframes de Inventario y Producción
 - [ ] Cifrado de contraseñas antes de almacenarlas
@@ -436,3 +436,22 @@ Para garantizar que nadie acceda a las vistas del panel sin estar logueado:
 2. **Cierre de Sesión (Logout):**
    - Asocia una acción al botón de "Salir" del menú lateral.
    - Al hacer clic, elimina los datos de sesión activa del almacenamiento y recarga la página o redirige al usuario de vuelta a la pantalla de Login.
+
+---
+
+## 🆕 Nuevas Características Implementadas: Módulo de Inventario y Web Components
+
+Para escalar el sistema y cumplir con los requerimientos adicionales del negocio, se ha introducido el módulo de **Productos (Inventario)** y se ha modernizado la arquitectura implementando **Web Components**.
+
+### 1. Web Components Reutilizables (Archivos en `/js/components`)
+En lugar de repetir el mismo código HTML y JS a lo largo del sistema, se crearon componentes nativos de Javascript (`HTMLElement`):
+- **`<app-tabla>`**: Componente general para inyectar cualquier lista de datos (usuarios, productos) en forma de tabla interactiva. Dispara eventos `accion-tabla` cuando un registro es editado o eliminado.
+- **`<app-editor>`**: Ventana flotante (Modal) genérica que alinea su funcionamiento para editar información de los elementos (en este caso, funciona como editor de los productos). Dispara el evento `product-edit` al confirmar la edición.
+- **`<menu-lateral>`**: Componente para la navegación del dashboard principal.
+
+### 2. Gestión de Inventario (`productos.html` / `js/productos.js`)
+Se ha completado el ciclo de vida CRUD del catálogo de productos y su conectividad con Firebase:
+- **Gestión de Stock**: Los productos incluyen ahora la propiedad de `stock`, que puede visualizarse y editarse localmente en tiempo real a través del Web Component `<app-editor>`.
+- **Definición de Recetas Dinámica**: Se incluyó un nuevo sistema de UI que permite "agregar ingredientes" a un producto durante su registro. Emplea manipulaciones del DOM mediante Javascript para añadir, quitar y recopilar dinámicamente campos (select e input) que conforman la receta del producto en formato de objeto (ej. `{"madera": 2, "clavos": 50}`).
+- **Actualización Total con la Nube**: Las funciones `addProduct`, `updateProduct` y `deleteProduct` integran las operaciones REST (PUT, DELETE) sobre `https://stock-slow-5f434-default-rtdb.firebaseio.com/productos/` manteniendo el `localStorage` sincronizado al milisegundo y redibujando la tabla tras cada interacción.
+- **Filtro y Búsqueda**: Funcionalidad de buscador instanciado y vinculado a la carga dinámica del `<app-tabla>`, lo cual permite un filtrado eficiente por código o nombre.
