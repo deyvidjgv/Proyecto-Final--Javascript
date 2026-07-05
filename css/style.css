@@ -447,7 +447,8 @@ menu-lateral {
 }
 
 /* Formulario dentro del modal: mismo look que campo-grupo */
-#formEditarUsuario label {
+#formEditarUsuario label,
+#formularioEditarProducto label {
   display: block;
   font-size: 12px;
   color: #6b6b6b;
@@ -455,12 +456,15 @@ menu-lateral {
   margin-top: 1rem;
 }
 
-#formEditarUsuario label:first-of-type {
+#formEditarUsuario label:first-of-type,
+#formularioEditarProducto label:first-of-type {
   margin-top: 0;
 }
 
 #formEditarUsuario input,
-#formEditarUsuario select {
+#formEditarUsuario select,
+#formularioEditarProducto input,
+#formularioEditarProducto select {
   width: 100%;
   padding: 8px 12px;
   border: 0.5px solid rgba(0, 0, 0, 0.12);
@@ -474,11 +478,14 @@ menu-lateral {
 }
 
 #formEditarUsuario input:focus,
-#formEditarUsuario select:focus {
+#formEditarUsuario select:focus,
+#formularioEditarProducto input:focus,
+#formularioEditarProducto select:focus {
   border-color: #1a1a1a;
 }
 
-#formEditarUsuario button[type="submit"] {
+#formEditarUsuario button,
+#formularioEditarProducto button {
   width: 100%;
   margin-top: 1.5rem;
   padding: 9px;
@@ -492,6 +499,60 @@ menu-lateral {
   font-family: inherit;
 }
 
-#formEditarUsuario button[type="submit"]:hover {
+#formEditarUsuario button:hover,
+#formularioEditarProducto button:hover {
   opacity: 0.8;
+}
+
+/* ─── FILA INGREDIENTE ─── */
+.fila-ingrediente {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.fila-ingrediente select,
+.fila-ingrediente input {
+  padding: 8px 12px;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  background: #f5f5f3;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.fila-ingrediente select {
+  flex: 2;
+}
+
+.fila-ingrediente input {
+  flex: 1;
+}
+
+.fila-ingrediente select:focus,
+.fila-ingrediente input:focus {
+  border-color: #1a1a1a;
+}
+
+.btn-quitar-ingrediente {
+  background: transparent;
+  color: #c0392b;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-size: 14px;
+}
+
+.btn-quitar-ingrediente:hover {
+  background: #f5f5f3;
 }
