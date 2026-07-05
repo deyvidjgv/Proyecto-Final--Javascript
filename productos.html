@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orbit Panel</title>
+    <title>Orbit Panel — Productos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- PANEL LAYOUT -->
+    <!-- layout del panel -->
     <div id="pantallaPanel" class="screen active panel-layout">
 
         <!-- barra lateral -->
@@ -19,13 +19,86 @@
 
         <!-- CONTENIDO PRINCIPAL -->
         <main class="panel-main">
-            <app-tabla></app-tabla>
 
+            <!-- HEADER -->
+            <header class="panel-header">
+                <div>
+                    <p class="header-breadcrumb">Panel / Productos</p>
+                    <h1 class="header-titulo">Productos</h1>
+                </div>
+            </header>
+
+            <!-- FORMULARIO AGREGAR PRODUCTO -->
+            <section class="panel-seccion">
+                <div class="form-card">
+                    <div class="form-card-header">
+                        <i class="ti ti-package"></i>
+                        <h2 class="form-card-titulo">Agregar producto</h2>
+                    </div>
+
+                    <form id="formularioProducto">
+
+                        <div class="campo-grupo">
+                            <label>Código</label>
+                            <input type="text" name="codigo" placeholder="Código del producto" required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label>Nombre</label>
+                            <input type="text" name="nombre" placeholder="Nombre del producto" required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label>Proveedor</label>
+                            <input type="text" name="proveedor" placeholder="Proveedor" required>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primario">
+                                <i class="ti ti-plus"></i> Agregar
+                            </button>
+                        </div>
+
+                        <p class="mensaje-error" id="mensajeErrorProducto"></p>
+
+                    </form>
+                </div>
+            </section>
+
+            <!-- TABLA DE PRODUCTOS -->
+            <section class="panel-usuario" id="seccionProductos">
+                <div class="tabla-card">
+
+                    <div class="tabla-header">
+                        <div class="tabla-header-info">
+                            <i class="ti ti-package"></i>
+                            <h2 class="tabla-titulo">Control de productos</h2>
+                        </div>
+                        <div class="tabla-header-acciones">
+                            <input type="text" class="tabla-buscador" placeholder="Buscar producto..."
+                                id="buscadorProductos">
+                        </div>
+                    </div>
+
+                    <app-tabla id="tablaProductos"></app-tabla>
+
+                    <div class="tabla-vacia" id="tablaVaciaProductos">
+                        <i class="ti ti-package-off"></i>
+                        <p>No hay productos registrados</p>
+                    </div>
+
+                </div>
+            </section>
         </main>
     </div>
 
-    <script src="js/main.js" type="module"></script>
+    <!-- Modal editor para productos -->
+    <app-editor></app-editor>
+
+    <script src="js/components/app-tabla.js" type="module"></script>
+    <script src="js/components/app-editor.js" type="module"></script>
     <script src="js/components/menu-lateral.js" type="module"></script>
+    <script src="js/productos.js" type="module"></script>
 </body>
 
 </html>
