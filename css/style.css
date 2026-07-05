@@ -22,14 +22,17 @@ body {
 
 /* ─── SIDEBAR ─── */
 menu-lateral {
+  display: flex;
   width: 220px;
-  min-height: 100vh;
+  height: 100vh;
+  position: sticky;
+  top: 0;
   flex-shrink: 0;
 }
 
-
 .sidebar {
-  min-height: 100vh;
+  height: 100%;         
+  width: 100%;
   background: #ffffff;
   border-right: 0.5px solid rgba(0, 0, 0, 0.10);
   display: flex;
@@ -37,6 +40,7 @@ menu-lateral {
   padding: 1.5rem 1rem;
   gap: 2rem;
   flex-shrink: 0;
+  overflow: hidden;     /* evita scroll interno del sidebar */
 }
 
 .sidebar-logo {
@@ -92,6 +96,7 @@ menu-lateral {
 }
 
 .sidebar-footer {
+  margin-top: auto;    
   border-top: 0.5px solid rgba(0, 0, 0, 0.10);
   padding-top: 1rem;
 }
