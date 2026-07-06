@@ -163,10 +163,10 @@ Se utiliza Firebase Realtime Database como backend, consumido directamente vía 
 
 Los bocetos de las pantallas de Login, Usuarios, Inventario y Producción se encuentran en la carpeta `/wireframes` de este repositorio.
 
-![Login](wireframes/wireframe-login.svg)
-![Usuarios](wireframes/wireframe-usuarios.svg)
-![Inventario](wireframes/wireframe-productos.svg)
-![Producción](wireframes/wireframe-produccion.svg)
+[Login](wireframes/wireframe-login.svg)
+[Usuarios](wireframes/wireframe-usuarios.svg)
+[Inventario](wireframes/wireframe-productos.svg)
+[Producción](wireframes/wireframe-produccion.svg)
 
 ## Limitaciones conocidas
 
