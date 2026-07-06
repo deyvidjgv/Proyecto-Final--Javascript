@@ -14,10 +14,21 @@ body {
 .screen        { display: none; }
 .screen.active { display: flex; }
 
-/* ─── PANEL LAYOUT ─── */
 .panel-layout {
   min-height: 100vh;
-  background: url('../img/galaxia.png') center center / cover no-repeat fixed;
+  background: url('../img/caballo.png') center center / cover no-repeat fixed;
+}
+
+.panel-layout.panel-productos {
+  background-image: url('../img/ojodios.png');
+}
+
+.panel-layout.panel-produccion {
+  background-image: url('../img/mariposa.png');
+}
+
+.panel-layout.panel-inicio {
+  background-image: url('../img/galaxia.png');
 }
 
 /* ─── SIDEBAR ─── */

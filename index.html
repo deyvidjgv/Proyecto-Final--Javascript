@@ -4,142 +4,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orbit Panel</title>
+    <title>Inicio — Sistema de Producción Acme</title>
+    <meta name="description" content="Panel de control del Sistema de Producción Acme. Gestiona usuarios, inventario y producción desde un solo lugar.">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .bienvenida-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .bienvenida-hero {
+            background: #ffffff;
+            border: 0.5px solid rgba(0, 0, 0, 0.12);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+        }
+
+        .bienvenida-hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #6b6b6b;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1rem;
+        }
+
+        .bienvenida-hero-tag i {
+            font-size: 14px;
+        }
+
+        .bienvenida-hero h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .bienvenida-hero p {
+            font-size: 14px;
+            color: #6b6b6b;
+            line-height: 1.65;
+            max-width: 580px;
+        }
+
+        .modulos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        .modulo-card {
+            background: #ffffff;
+            border: 0.5px solid rgba(0, 0, 0, 0.12);
+            border-radius: 8px;
+            padding: 1.75rem 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: box-shadow 0.15s, border-color 0.15s, transform 0.15s;
+            cursor: pointer;
+        }
+
+        .modulo-card:hover {
+            border-color: #1a1a1a;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .modulo-card-icon {
+            width: 40px;
+            height: 40px;
+            background: #f5f5f3;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #1a1a1a;
+        }
+
+        .modulo-card-titulo {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        .modulo-card-desc {
+            font-size: 13px;
+            color: #6b6b6b;
+            line-height: 1.55;
+            margin: 0;
+            flex: 1;
+        }
+
+        .modulo-card-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .modulo-card-link i {
+            font-size: 14px;
+            transition: transform 0.15s;
+        }
+
+        .modulo-card:hover .modulo-card-link i {
+            transform: translateX(3px);
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- layout del panel -->
-    <div id="pantallaPanel" class="screen active panel-layout">
+    <div id="pantallaPanel" class="screen active panel-layout panel-inicio">
 
         <!-- barra lateral -->
-            <menu-lateral activo="usuarios"></menu-lateral>
+        <menu-lateral activo="inicio"></menu-lateral>
 
-        <!--CONTENIDO PRINCIPAL -->
+        <!-- CONTENIDO PRINCIPAL -->
         <main class="panel-main">
 
             <!-- HEADER -->
             <header class="panel-header">
                 <div>
-                    <p class="header-breadcrumb">Panel / Usuarios</p>
-                    <h1 class="header-titulo">Usuarios</h1>
+                    <p class="header-breadcrumb">Panel / Inicio</p>
+                    <h1 class="header-titulo">Inicio</h1>
                 </div>
             </header>
 
-            <!-- FORMULARIO AGREGAR USUARIO -->
-            <section class="panel-seccion">
-                <div class="form-card">
-                    <div class="form-card-header">
-                        <i class="ti ti-user-plus"></i>
-                        <h2 class="form-card-titulo">Agregar usuario</h2>
+            <!-- BIENVENIDA + MÓDULOS -->
+            <div class="bienvenida-section">
+
+                <!-- Hero de bienvenida -->
+                <div class="bienvenida-hero">
+                    <div class="bienvenida-hero-tag">
+                        <i class="ti ti-planet"></i>
+                        Sistema de Producción Acme
                     </div>
-
-                    <form id="formulario">
-
-                        <div class="campo-grupo">
-                            <label>Username</label>
-                            <input type="text" name="username" placeholder="usuario" required>
-                        </div>
-
-                        <div class="campo-grupo">
-                            <label>Nombre</label>
-                            <input type="text" name="nombre" placeholder="nombre completo" required>
-                        </div>
-
-                        <div class="campo-grupo">
-                            <label>Contraseña</label>
-                            <input type="password" name="contrasena" placeholder="••••••••" required>
-                        </div>
-
-                        <div class="campo-grupo">
-                            <label>Validar contraseña</label>
-                            <input type="password" name="validarContrasena" placeholder="••••••••" required>
-                        </div>
-
-                        <div class="campo-grupo">
-                            <label>Rol</label>
-                            <select name="rol">
-                                <option value="">Seleccionar rol</option>
-                                <option value="admin">Administrador</option>
-                                <option value="usuario">Usuario</option>
-                            </select>
-                        </div>
-
-                        <div class="form-actions">
-                            <button type="submit" class="btn-primario">
-                                <i class="ti ti-user-plus"></i> Registrar
-                            </button>
-                        </div>
-
-                        <p class="mensaje-error" id="mensajeError"></p>
-
-                    </form>
+                    <h2 id="saludo-titulo">Bienvenido al panel de control</h2>
+                    <p id="saludo-rol">
+                        Esta plataforma centraliza la gestión operativa de la planta Acme en Macondo.
+                        Desde aquí puedes administrar los usuarios del sistema, controlar el inventario
+                        de productos e insumos, y supervisar los procesos de fabricación con trazabilidad completa.
+                    </p>
                 </div>
-            </section>
 
+                <!-- Tarjetas de módulos -->
+                <div class="modulos-grid">
 
-            <section class="panel-usuario" id="seccionUsuarios">
-                <div class="tabla-card">
- 
-                    <div class="tabla-header">
-                        <div class="tabla-header-info">
+                    <a href="usuarios.html" class="modulo-card" id="card-usuarios">
+                        <div class="modulo-card-icon">
                             <i class="ti ti-users"></i>
-                            <h2 class="tabla-titulo">Control de usuarios</h2>
                         </div>
-                        <div class="tabla-header-acciones">
-                            <input type="text" class="tabla-buscador" placeholder="Buscar usuario..." id="buscadorUsuarios">
+                        <div>
+                            <p class="modulo-card-titulo">Usuarios</p>
+                            <p class="modulo-card-desc">
+                                Registra, edita y elimina los usuarios del sistema. Asigna roles de Administrador o Usuario según el cargo en la planta.
+                            </p>
                         </div>
-                    </div>
-                    <app-tabla id="tablaUsuarios"></app-tabla>
- 
-                    <div class="tabla-vacia" id="tablaVacia">
-                        <i class="ti ti-users-off"></i>
-                        <p>No hay usuarios registrados</p>
-                    </div>
- 
-                </div>
-            </section>
+                        <span class="modulo-card-link">
+                            Ir al módulo <i class="ti ti-arrow-right"></i>
+                        </span>
+                    </a>
 
-            
-            <!-- Contenido de la ventana flotante -->
-            <div id="miModal" class="modal">
-                <div class="container-modal">
-                    <span id="cerrarVentana" class="cerrar">&times;</span>
-                    <h2>Editar Usuario</h2>
-                    
-                    <form id="formEditarUsuario">
+                    <a href="productos.html" class="modulo-card" id="card-productos">
+                        <div class="modulo-card-icon">
+                            <i class="ti ti-package"></i>
+                        </div>
+                        <div>
+                            <p class="modulo-card-titulo">Productos</p>
+                            <p class="modulo-card-desc">
+                                Gestiona el inventario de productos terminados e insumos. Define fórmulas de fabricación con sus ingredientes y cantidades.
+                            </p>
+                        </div>
+                        <span class="modulo-card-link">
+                            Ir al módulo <i class="ti ti-arrow-right"></i>
+                        </span>
+                    </a>
 
-                        
-                        <label for="editUsername">Username:</label>
-                        <input type="text" id="editUsername" required readonly>
+                    <a href="produccion.html" class="modulo-card" id="card-produccion">
+                        <div class="modulo-card-icon">
+                            <i class="ti ti-settings-automation"></i>
+                        </div>
+                        <div>
+                            <p class="modulo-card-titulo">Producción</p>
+                            <p class="modulo-card-desc">
+                                Registra procesos de manufactura: selecciona el producto, indica la cantidad y el sistema descuenta automáticamente los insumos del inventario.
+                            </p>
+                        </div>
+                        <span class="modulo-card-link">
+                            Ir al módulo <i class="ti ti-arrow-right"></i>
+                        </span>
+                    </a>
 
-                        <label for="editNombre">Nombre:</label>
-                        <input type="text" id="editNombre" required>
-
-                        <label for="editPassword">password:</label>
-                        <input type="text" id="editPassword" required>
-
-                        <label for="editRol">Rol:</label>
-                        <select name="editRol" id="editRol" required>
-                            <option value="">Seleccionar rol</option>
-                            <option value="admin">Administrador</option>
-                            <option value="usuario">Usuario</option>
-                        </select>
-
-                        
-                        <button type="submit">Guardar Cambios</button>
-                    </form>
                 </div>
             </div>
 
         </main>
     </div>
 
-    <script src="js/components/app-tabla.js" type="module"></script>
     <script src="js/components/menu-lateral.js" type="module"></script>
-    <script src="js/main.js" type="module"></script>
+    <script src="js/inicio.js" type="module"></script>
 </body>
 
 </html>

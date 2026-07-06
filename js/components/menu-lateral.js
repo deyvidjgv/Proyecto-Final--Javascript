@@ -6,12 +6,16 @@ class MenuLateral extends HTMLElement {
     this.innerHTML = `
   <aside class="sidebar">
     <div class="sidebar-logo">
-      <i class="ti ti-planet"></i>
-      <span class="sidebar-titulo">Orbit Panel</span>
+      <i class="ti ti-building-factory-2"></i>
+      <span class="sidebar-titulo">Acme</span>
     </div>
 
     <nav class="sidebar-nav">
-      <a href="index.html" class="nav-item" data-seccion="usuarios">
+      <a href="index.html" class="nav-item" data-seccion="inicio">
+        <i class="ti ti-home"></i>
+        <span>Inicio</span>
+      </a>
+      <a href="usuarios.html" class="nav-item" data-seccion="usuarios">
         <i class="ti ti-users"></i>
         <span>Usuarios</span>
       </a>
@@ -19,7 +23,7 @@ class MenuLateral extends HTMLElement {
         <i class="ti ti-package"></i>
         <span>Productos</span>
       </a>
-      <a href="prodcuccion.html" class="nav-item" data-seccion="produccion">
+      <a href="produccion.html" class="nav-item" data-seccion="produccion">
         <i class="ti ti-settings"></i>
         <span>Producción</span>
       </a>
