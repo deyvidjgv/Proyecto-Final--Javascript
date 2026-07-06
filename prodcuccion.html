@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orbit Panel — Productos</title>
+    <title>Orbit Panel — Producción</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -23,19 +23,75 @@
             <!-- HEADER -->
             <header class="panel-header">
                 <div>
-                    <p class="header-breadcrumb">Panel / Produccion</p>
-                    <h1 class="header-titulo">Produccion</h1>
+                    <p class="header-breadcrumb">Panel / Producción</p>
+                    <h1 class="header-titulo">Producción</h1>
                 </div>
             </header>
 
+            <!-- FORMULARIO FABRICAR PRODUCTO -->
+            <section class="panel-seccion">
+                <div class="form-card">
+                    <div class="form-card-header">
+                        <i class="ti ti-settings-automation"></i>
+                        <h2 class="form-card-titulo">Fabricar producto</h2>
+                    </div>
 
-            
+                    <form id="formularioProduccion">
+
+                        <div class="campo-grupo">
+                            <label>Producto a fabricar</label>
+                            <select name="producto" id="selectProducto" required>
+                                <option value="">Seleccionar producto</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label>Cantidad a fabricar</label>
+                            <input type="number" name="cantidad" id="inputCantidad" placeholder="0" min="1" required>
+                        </div>
+
+                        <!-- VISTA PREVIA -->
+                        <div id="vistaPrevia" class="vista-previa"></div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primario" id="btnFabricar">
+                                <i class="ti ti-settings-automation"></i> Fabricar
+                            </button>
+                        </div>
+
+                        <p class="mensaje-error" id="mensajeErrorProduccion"></p>
+
+                    </form>
+                </div>
+            </section>
+
+            <!-- HISTORIAL DE PRODUCCIÓN -->
+            <section class="panel-usuario" id="seccionProduccion">
+                <div class="tabla-card">
+
+                    <div class="tabla-header">
+                        <div class="tabla-header-info">
+                            <i class="ti ti-history"></i>
+                            <h2 class="tabla-titulo">Historial de producción</h2>
+                        </div>
+                    </div>
+
+                    <app-tabla id="tablaProduccion"></app-tabla>
+
+                    <div class="tabla-vacia" id="tablaVaciaProduccion">
+                        <i class="ti ti-settings-off"></i>
+                        <p>No se han registrado procesos de producción</p>
+                    </div>
+
+                </div>
+            </section>
+
         </main>
     </div>
 
-    <!-- Modal editor para productos -->
-
+    <script src="js/components/app-tabla.js" type="module"></script>
     <script src="js/components/menu-lateral.js" type="module"></script>
+    <script src="js/produccion.js" type="module"></script>
 </body>
 
 </html>

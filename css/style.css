@@ -556,3 +556,9 @@ menu-lateral {
 .btn-quitar-ingrediente:hover {
   background: #f5f5f3;
 }
+
+/* ─── APP-TABLA PRODUCCION (Solo lectura) ─── */
+#tablaProduccion table th:last-child,
+#tablaProduccion table td:last-child {
+  display: none;
+}
