@@ -63,6 +63,11 @@ class AppEditor extends HTMLElement {
     this.querySelector("#editProductoNombre").value = datos.nombre;
     this.querySelector("#editProductoProveedor").value = datos.proveedor;
     this.querySelector("#editProductoStock").value = datos.stock;
+    if (datos.receta) {
+      this.querySelector("#editProductoStock").disabled = true;
+    } else {
+      this.querySelector("#editProductoStock").disabled = false;
+    }
   }
 }
 
