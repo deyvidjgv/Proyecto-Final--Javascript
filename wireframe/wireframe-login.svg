@@ -1,0 +1,34 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="800" height="600" fill="#f2f2f2"/>
+  <text x="400" y="40" text-anchor="middle" font-size="18" fill="#555" font-weight="bold">WIREFRAME — Login</text>
+
+  <!-- Login card -->
+  <rect x="250" y="90" width="300" height="420" rx="6" fill="#ffffff" stroke="#999" stroke-width="2"/>
+
+  <!-- Icon placeholder -->
+  <circle cx="280" cy="130" r="12" fill="none" stroke="#999" stroke-width="2"/>
+  <text x="310" y="136" font-size="16" fill="#333">Iniciar sesión</text>
+  <line x1="270" y1="155" x2="530" y2="155" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Field: username -->
+  <text x="280" y="190" font-size="11" fill="#777">Username / Identificación</text>
+  <rect x="280" y="198" width="240" height="34" rx="4" fill="#eee" stroke="#bbb"/>
+
+  <!-- Field: password -->
+  <text x="280" y="255" font-size="11" fill="#777">Contraseña</text>
+  <rect x="280" y="263" width="240" height="34" rx="4" fill="#eee" stroke="#bbb"/>
+
+  <!-- Button -->
+  <rect x="280" y="320" width="240" height="38" rx="4" fill="#333"/>
+  <text x="400" y="344" text-anchor="middle" font-size="13" fill="#fff">Ingresar</text>
+
+  <!-- Error message placeholder -->
+  <text x="400" y="380" text-anchor="middle" font-size="10" fill="#c0392b">[ mensaje de error ]</text>
+
+  <!-- Footer note -->
+  <line x1="280" y1="440" x2="520" y2="440" stroke="#eee" stroke-width="1"/>
+  <text x="400" y="465" text-anchor="middle" font-size="10" fill="#aaa">Acceso restringido — sin registro público</text>
+
+  <!-- Annotation -->
+  <text x="400" y="560" text-anchor="middle" font-size="11" fill="#888">Fondo: imagen decorativa de planta / espacio (no funcional)</text>
+</svg>
