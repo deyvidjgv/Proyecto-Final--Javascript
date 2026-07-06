@@ -22,6 +22,7 @@ La aplicación resuelve el flujo operativo de la planta:
 - Un usuario autenticado registra materia prima y productos elaborados en el inventario.
 - A un producto elaborado se le puede asociar una **receta**, que indica cuánta materia prima se necesita para fabricarlo.
 - Al ejecutar un proceso de producción, el sistema valida que haya stock suficiente de cada material, descuenta la materia prima usada y aumenta el stock del producto terminado, dejando un historial con código consecutivo.
+- Cuenta con un **diseño responsive**, permitiendo su uso tanto en computadoras de escritorio como en dispositivos móviles y tablets de forma fluida.
 
 ## Despliegues en vivo
 
@@ -32,7 +33,7 @@ Puedes probar la aplicación desplegada en cualquiera de los siguientes enlaces:
 ## Tecnologías utilizadas
 
 - **HTML5** — estructura de las vistas.
-- **CSS3** (Flexbox) — estilos y diseño del panel.
+- **CSS3** (Flexbox, Media Queries) — estilos, diseño del panel y adaptación responsive.
 - **JavaScript (ES6+)** — lógica de negocio, sin frameworks.
 - **Web Components** (`customElements`) — tabla, menú lateral y modal reutilizables.
 - **Firebase Realtime Database** — persistencia de datos vía REST API (`fetch`).

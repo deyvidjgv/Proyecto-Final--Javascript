@@ -573,3 +573,108 @@ menu-lateral {
 #tablaProduccion table td:last-child {
   display: none;
 }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .panel-layout {
+    flex-direction: column;
+  }
+  
+  menu-lateral {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    z-index: 1000;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    padding: 0.5rem;
+    gap: 0;
+    align-items: center;
+    border-right: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    height: auto;
+  }
+
+  .sidebar-logo {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-around;
+  }
+
+  .sidebar-footer {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    padding: 6px;
+    font-size: 10px;
+    gap: 4px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .nav-item i {
+    font-size: 20px;
+  }
+
+  .panel-main {
+    padding: 1rem;
+    padding-bottom: 85px; /* espacio para el menu inferior */
+  }
+
+  .panel-seccion {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-card {
+    width: 100%;
+    max-width: none;
+  }
+
+  .tabla-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .tabla-buscador {
+    width: 100%;
+  }
+
+  .tabla-card {
+    overflow-x: auto;
+  }
+  
+  .tabla {
+    min-width: 600px;
+  }
+
+  .bienvenida-hero {
+    padding: 1.5rem;
+  }
+
+  .bienvenida-hero h2 {
+    font-size: 22px;
+  }
+  
+  .modulos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .container-modal {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}

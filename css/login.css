@@ -22,7 +22,8 @@ body {
   border: 0.5px solid rgba(0, 0, 0, 0.12);
   border-radius: 8px;
   padding: 2rem;
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   animation: slideUp 0.2s ease-out;
 }
