@@ -49,10 +49,13 @@ formulario.addEventListener("submit", (event) => {
 
 const listUsers = async () => {
   const usersLS = localStorage.getItem("users");
-  if (usersLS) {
+  if (usersLS && JSON.parse(usersLS).length > 0) {
     users = JSON.parse(usersLS);
   } else {
-    localStorage.setItem("users", JSON.stringify([]));
+    const res = await fetch(`${URL}/users.json`);
+    const data = await res.json();
+    users = data ? Object.values(data) : [];
+    localStorage.setItem("users", JSON.stringify(users));
   }
   return users;
 };

@@ -8,10 +8,13 @@ let contadorIngredientes = 0;
 
 const listProducts = async () => {
   const listProductsLS = localStorage.getItem("productos");
-  if (listProductsLS) {
+  if (listProductsLS && JSON.parse(listProductsLS).length > 0) {
     productos = JSON.parse(listProductsLS);
   } else {
-    localStorage.setItem("productos", JSON.stringify([]));
+    const res = await fetch(`${URL}/productos.json`);
+    const data = await res.json();
+    productos = data ? Object.values(data) : [];
+    localStorage.setItem("productos", JSON.stringify(productos));
   }
   return productos;
 };
@@ -127,6 +130,12 @@ formulario.addEventListener("submit", (event) => {
 
 const renderTabla = (lista) => {
   document.querySelector("#tablaProductos").datos = lista;
+
+  if (lista.length === 0) {
+    document.querySelector("#tablaVaciaProductos").style.display = "flex";
+  } else {
+    document.querySelector("#tablaVaciaProductos").style.display = "none";
+  }
 };
 
 const showProducts = async () => {

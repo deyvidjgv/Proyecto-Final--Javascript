@@ -20,10 +20,13 @@ const httpClient = (url, payload, method) => {
 
 const listProduccion = async () => {
   const listaProductos = localStorage.getItem("productos");
-  if (listaProductos) {
+  if (listaProductos && JSON.parse(listaProductos).length > 0) {
     productos = JSON.parse(listaProductos);
   } else {
-    localStorage.setItem("productos", JSON.stringify([]));
+    const res = await fetch(`${URL}/productos.json`);
+    const data = await res.json();
+    productos = data ? Object.values(data).filter((p) => p !== null) : [];
+    localStorage.setItem("productos", JSON.stringify(productos));
   }
   return productos;
 };
@@ -31,11 +34,11 @@ const listProduccion = async () => {
 const listProcesos = async () => {
   const listaProcesos = localStorage.getItem("procesos");
   if (listaProcesos && JSON.parse(listaProcesos).length > 0) {
-    procesos = JSON.parse(listaProcesos);
+    procesos = JSON.parse(listaProcesos).filter((p) => p !== null);
   } else {
     const res = await fetch(`${URL}/procesos.json`);
     const data = await res.json();
-    procesos = data ? Object.values(data) : [];
+    procesos = data ? Object.values(data).filter((p) => p !== null) : [];
     localStorage.setItem("procesos", JSON.stringify(procesos));
   }
   return procesos;
@@ -56,6 +59,12 @@ const llenarSelectProductos = () => {
 const renderTablaProcesos = async () => {
   const lista = await listProcesos();
   document.querySelector("#tablaProduccion").datos = lista;
+
+  if (lista.length === 0) {
+    document.querySelector("#tablaVaciaProduccion").style.display = "flex";
+  } else {
+    document.querySelector("#tablaVaciaProduccion").style.display = "none";
+  }
 };
 
 const validarStock = (producto, cantidad) => {
@@ -67,9 +76,13 @@ const validarStock = (producto, cantidad) => {
     const stockDisponible = ingrediente ? ingrediente.stock : 0;
     const necesario = cantidadReceta * cantidad;
 
-    if (stockDisponible < necesario) alcanza = false;
+    let colorTexto = "#1a1a1a";
+    if (stockDisponible < necesario) {
+      colorTexto = "#c0392b";
+      alcanza = false;
+    }
 
-    return `<div class="ingrediente-item">
+    return `<div class="ingrediente-item" style="color: ${colorTexto}">
       <span class="ingrediente-nombre">${nombre}</span>
       <span class="ingrediente-cantidad">Req: ${necesario} / Stock: ${stockDisponible}</span>
     </div>`;
