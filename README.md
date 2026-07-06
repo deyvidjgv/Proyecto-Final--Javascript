@@ -23,6 +23,12 @@ La aplicación resuelve el flujo operativo de la planta:
 - A un producto elaborado se le puede asociar una **receta**, que indica cuánta materia prima se necesita para fabricarlo.
 - Al ejecutar un proceso de producción, el sistema valida que haya stock suficiente de cada material, descuenta la materia prima usada y aumenta el stock del producto terminado, dejando un historial con código consecutivo.
 
+## Despliegues en vivo
+
+Puedes probar la aplicación desplegada en cualquiera de los siguientes enlaces:
+- **Netlify:** [https://acme-deyvid.netlify.app/](https://acme-deyvid.netlify.app/)
+- **GitHub Pages:** [https://deyvidjgv.github.io/Proyecto-Final--Javascript/](https://deyvidjgv.github.io/Proyecto-Final--Javascript/)
+
 ## Tecnologías utilizadas
 
 - **HTML5** — estructura de las vistas.
@@ -161,12 +167,12 @@ Se utiliza Firebase Realtime Database como backend, consumido directamente vía 
 
 ## Wireframes
 
-Los bocetos de las pantallas de Login, Usuarios, Inventario y Producción se encuentran en la carpeta `/wireframes` de este repositorio.
+Los bocetos de las pantallas de Login, Usuarios, Inventario y Producción se encuentran en la carpeta `/wireframe` de este repositorio.
 
-[Login](wireframes/wireframe-login.svg)
-[Usuarios](wireframes/wireframe-usuarios.svg)
-[Inventario](wireframes/wireframe-productos.svg)
-[Producción](wireframes/wireframe-produccion.svg)
+- [Login](wireframe/wireframe-login.png)
+- [Usuarios](wireframe/wireframe-usuarios.png)
+- [Inventario](wireframe/wireframe-productos.png)
+- [Producción](wireframe/wireframe-produccion.png)
 
 ## Limitaciones conocidas
 
