@@ -18,7 +18,7 @@ class AppEditor extends HTMLElement {
                         <input type="text" id="editProductoProveedor" required>
 
                         <label for="editProductoStock">Stock:</label>
-                        <input type="text" id="editProductoStock" required>
+                        <input type="text" id="editProductoStock" onkeydown="if(['e', 'E', '+', '-'].includes(event.key)) { event.preventDefault(); }" required>
                         
                         <button type="submit">Guardar Cambios</button>
                     </form>
