@@ -127,12 +127,20 @@ inputCantidad.addEventListener("input", actualizarVistaPrevia);
 
 const fabricarProducto = async (nombreProducto, cantidad) => {
   const productoTerminado = productos.find((p) => p.nombre === nombreProducto);
+  const detalleUso = {};
 
   for (const [nombreIngrediente, cantidadReceta] of Object.entries(
     productoTerminado.receta,
   )) {
     const ingrediente = productos.find((p) => p.nombre === nombreIngrediente);
-    ingrediente.stock -= cantidadReceta * cantidad;
+    const usado = cantidadReceta * cantidad;
+
+    ingrediente.stock -= usado;
+    detalleUso[nombreIngrediente] = {
+      codigo: ingrediente.codigo,
+      cantidad: usado,
+    };
+
     await httpClient(
       `${URL}/productos/${ingrediente.codigo}.json`,
       ingrediente,
@@ -149,12 +157,16 @@ const fabricarProducto = async (nombreProducto, cantidad) => {
 
   localStorage.setItem("productos", JSON.stringify(productos));
 
+  const ahora = new Date();
   const codigoProceso = procesos.length + 1;
   const proceso = {
     codigo: codigoProceso.toString(),
     producto: nombreProducto,
     cantidad: cantidad,
-    fecha: new Date().toLocaleString(),
+    fecha: ahora.toLocaleString(),
+    anio: ahora.getFullYear(),
+    mes: ahora.getMonth() + 1,
+    detalle: detalleUso,
   };
 
   procesos.push(proceso);

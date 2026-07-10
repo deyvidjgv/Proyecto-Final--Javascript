@@ -27,6 +27,13 @@ class MenuLateral extends HTMLElement {
         <i class="ti ti-settings"></i>
         <span>Producción</span>
       </a>
+
+      <a href="reportes.html" class="nav-item" data-seccion="reportes">
+      <i class="ti ti-settings"></i>
+      <span>Reportes</span>
+    </a>
+
+
     </nav>
 
     <div class="sidebar-footer">

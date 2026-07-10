@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Producción Acme — Reportes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- layout del panel -->
+    <div id="pantallaPanel" class="screen active panel-layout">
+
+        <!-- barra lateral -->
+        <menu-lateral activo="reportes"></menu-lateral>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="panel-main">
+
+            <!-- HEADER -->
+            <header class="panel-header">
+                <div>
+                    <p class="header-breadcrumb">Panel / Reportes</p>
+                    <h1 class="header-titulo">Reportes</h1>
+                </div>
+            </header>
+
+            <!-- FORMULARIO DE FILTRO -->
+            <section class="panel-seccion">
+                <div class="form-card">
+                    <div class="form-card-header">
+                        <i class="ti ti-chart-bar"></i>
+                        <h2 class="form-card-titulo">Materia prima utilizada por mes</h2>
+                    </div>
+
+                    <form id="formularioReporte">
+
+                        <div class="campo-grupo">
+                            <label>Año</label>
+                            <select name="anio" id="selecAnio" required>
+                                <option value="">Seleccionar año</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label>Mes</label>
+                            <select name="mes" id="selecMes" required>
+                                <option value="">Seleccionar mes</option>
+                                <option value="1">Enero</option>
+                                <option value="2">Febrero</option>
+                                <option value="3">Marzo</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Mayo</option>
+                                <option value="6">Junio</option>
+                                <option value="7">Julio</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primario">
+                                <i class="ti ti-search"></i> Generar reporte
+                            </button>
+                        </div>
+
+                        <p class="mensaje-error" id="mensajeErrorReporte"></p>
+
+                    </form>
+                </div>
+            </section>
+
+            <!-- TABLA DE RESULTADOS -->
+            <section class="panel-usuario" id="seccionReporte">
+                <div class="tabla-card">
+
+                    <div class="tabla-header">
+                        <div class="tabla-header-info">
+                            <i class="ti ti-report"></i>
+                            <h2 class="tabla-titulo">Consumo de materia prima</h2>
+                        </div>
+                    </div>
+
+                    <app-tabla id="tablaReporte"></app-tabla>
+
+                    <div class="tabla-vacia" id="tablaVaciaReporte">
+                        <i class="ti ti-report-off"></i>
+                        <p>Selecciona un año y mes para ver el reporte</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/components/app-tabla.js" type="module"></script>
+    <script src="js/components/menu-lateral.js" type="module"></script>
+    <script src="js/reportes.js" type="module"></script>
+</body>
+
+</html>
